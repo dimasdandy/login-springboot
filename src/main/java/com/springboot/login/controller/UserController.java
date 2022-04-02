@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.springboot.login.service.UserService;
 
 @RestController
-@RequestMapping(value = "/api/")
+@RequestMapping(value = "api/")
 public class UserController {
 
 	@Autowired
@@ -20,8 +20,7 @@ public class UserController {
 	@GetMapping(value = "users")
 	public ResponseEntity<?> getAllUser() {
 		try {
-//			return ResponseEntity.ok();
-			return null;
+			return ResponseEntity.ok(userService.getAllUsers());
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
