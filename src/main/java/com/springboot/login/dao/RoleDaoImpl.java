@@ -39,4 +39,20 @@ public class RoleDaoImpl extends BaseDaoImpl implements RoleDao {
 		return list;
 	}
 
+	@Override
+	public void addRole(Roles roles) throws Exception {
+		em.persist(roles);
+	}
+
+	@Override
+	public void updateRole(Roles roles) throws Exception {
+		em.merge(roles);
+	}
+
+	@Override
+	public void deleteRole(String id) throws Exception {
+		String sql = "DELETE FROM tbl_roles role where role.id = :id";
+		em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
+	}
+
 }

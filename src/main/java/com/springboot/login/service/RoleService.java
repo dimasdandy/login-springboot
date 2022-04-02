@@ -10,4 +10,9 @@ public interface RoleService {
 
 	List<Roles> getAllRoles() throws Exception;
 
+	void addRole(Roles roles) throws Exception;
+
+	void updateRole(Roles roles) throws Exception;
+	
+	void deleteRole(String id) throws Exception;
 }

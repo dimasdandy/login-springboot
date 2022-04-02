@@ -11,5 +11,11 @@ public interface UserDao {
 	Users getByUsername(String username) throws Exception;
 	
 	List<Users> getAllUsers() throws Exception;
+	
+	void addUser(Users users) throws Exception;
+
+	void updateUser(Users users) throws Exception;
+	
+	void deleteUser(String id) throws Exception;
 
 }

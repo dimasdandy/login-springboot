@@ -12,4 +12,9 @@ public interface UserService {
 	
 	List<Users> getAllUsers() throws Exception;
 
+	void addUser(Users user) throws Exception;
+
+	void updateUser(Users user) throws Exception;
+	
+	void deleteUser(String id) throws Exception;
 }

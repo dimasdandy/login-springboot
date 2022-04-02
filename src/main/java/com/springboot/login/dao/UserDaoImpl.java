@@ -112,4 +112,20 @@ public class UserDaoImpl extends BaseDaoImpl implements UserDao {
 		return listUsers;
 	}
 
+	@Override
+	public void addUser(Users users) throws Exception {
+		em.persist(users);
+	}
+
+	@Override
+	public void updateUser(Users users) throws Exception {
+		em.merge(users);
+	}
+
+	@Override
+	public void deleteUser(String id) throws Exception {
+		String sql = "DELETE FROM tbl_users where id = :id";
+		em.createNativeQuery(sql).setParameter("id", id).executeUpdate();
+	}
+
 }
